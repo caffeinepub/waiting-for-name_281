@@ -1,0 +1,34 @@
+service : {
+  getBalance: (id: nat) -> (variant {
+                              err: text;
+                              ok: nat;
+                            }) query;
+  getUser: (id: nat) ->
+   (variant {
+      err: text;
+      ok: record {
+            balance: nat;
+            id: nat;
+            mobile: text;
+            name: text;
+          };
+    }) query;
+  login: (mobile: text, password: text) ->
+   (variant {
+      err: text;
+      ok: record {
+            balance: nat;
+            id: nat;
+            name: text;
+          };
+    }) query;
+  register: (name: text, mobile: text, password: text) ->
+   (variant {
+      err: text;
+      ok: record {
+            balance: nat;
+            id: nat;
+            name: text;
+          };
+    });
+}
